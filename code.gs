@@ -73,9 +73,10 @@ function processEmails() {
           cell = sheet.getRange("D3");
           cell.setValue('Pending');
         }
-        //GmailApp.moveThreadToArchive(threads[i]);
-        Gmail.Users.Messages.remove('me', threads[i].getId());
+        // GmailApp.moveThreadToArchive(threads[i]);
+        // Gmail.Users.Messages.remove('me', threads[i].getId());
       }
+      Gmail.Users.Threads.remove('me', threads[i].getId());
     }
   }
 }
